@@ -1,0 +1,107 @@
+{
+  "title": "AICE Associate - Fish Market 회귀 문제",
+  "description": "어시장 데이터를 이용한 물고기 무게 예측",
+  "answers": {
+    "답안01": {
+      "type": "exact_number",
+      "expected": 159,
+      "description": "df에 포함된 샘플의 개수"
+    },
+    "답안02": {
+      "type": "exact_string",
+      "expected": "Perch",
+      "case_sensitive": true,
+      "description": "가장 많이 등장하는 종 이름"
+    },
+    "답안03_1": {
+      "type": "exact_string",
+      "expected": "corr",
+      "case_sensitive": true,
+      "description": "상관관계를 구하는 함수명"
+    },
+    "답안03_2": {
+      "type": "exact_number",
+      "expected": 1,
+      "description": "양의 상관 경향이 뚜렷한지 여부 (1: 그렇다, 0: 아니다)"
+    },
+    "답안04": {
+      "type": "exact_string",
+      "expected": "Bream",
+      "case_sensitive": true,
+      "description": "중앙값(median)이 가장 큰 종 이름"
+    },
+    "답안05": {
+      "type": "exact_number",
+      "expected": 12,
+      "description": "Length3 >= 40 이고 Height >= 15인 샘플 개수"
+    },
+    "답안06": {
+      "type": "exact_number",
+      "expected": 5,
+      "description": "X의 수치형 변수 개수"
+    },
+    "답안07": {
+      "type": "exact_number",
+      "expected": 0,
+      "description": "결측치 대체 후 남은 결측치 총 개수"
+    },
+    "답안08": {
+      "type": "exact_number",
+      "expected": 4,
+      "description": "X_del의 컬럼 수"
+    },
+    "답안09": {
+      "type": "exact_number",
+      "expected": 10,
+      "description": "원핫인코딩 후 X_preset의 컬럼 수"
+    },
+    "답안10": {
+      "type": "exact_number",
+      "expected": -0.275,
+      "tolerance": 0.01,
+      "description": "스케일링 후 X_train의 Height 중앙값"
+    },
+    "답안12": {
+      "type": "exact_string",
+      "expected": "randomforest",
+      "case_sensitive": false,
+      "description": "RMSE 성능이 더 좋은 모델 이름"
+    },
+    "답안13_1": {
+      "type": "auto",
+      "requirements": {
+        "min_dense_layers": 2,
+        "min_dropout_layers": 2,
+        "dropout_rate": 0.3,
+        "hidden_activation": "gelu"
+      },
+      "description": "딥러닝 모델 구조 (Dense 2개 이상, Dropout 2개 이상, gelu)"
+    },
+    "답안13_2": {
+      "type": "auto",
+      "requirements": {
+        "max_epochs": 30,
+        "patience": 3,
+        "monitor": "val_mae",
+        "monitor_mode": "min"
+      },
+      "description": "딥러닝 학습 history (EarlyStopping patience=3 검증)"
+    },
+    "답안14_1": {
+      "type": "number_range",
+      "max": 70,
+      "description": "검증세트에 대한 MAE (70 이하이면 정답)"
+    },
+    "답안14_2": {
+      "type": "figure_check",
+      "requirements": {
+        "num_axes": 2,
+        "lines_per_ax": 2,
+        "titles": ["Loss by epoch", "MAE by epoch"],
+        "xlabels": ["epochs", "epochs"],
+        "ylabels": ["loss", "mae"]
+      },
+      "description": "학습 과정 시각화 figure"
+    }
+  }
+}

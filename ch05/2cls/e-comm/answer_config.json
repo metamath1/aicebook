@@ -1,0 +1,107 @@
+{
+  "title": "AICE Associate - E-commerce Shipping 2진 분류 문제",
+  "description": "고객 및 배송 데이터를 이용한 배송 정시 도착 여부 예측",
+  "answers": {
+    "답안01": {
+      "type": "exact_number",
+      "expected": 8799,
+      "description": "df에 포함된 샘플의 개수"
+    },
+    "답안02": {
+      "type": "exact_number",
+      "expected": 1,
+      "description": "샘플이 더 많은 클래스 번호"
+    },
+    "답안03": {
+      "type": "exact_string",
+      "expected": "Ship",
+      "case_sensitive": true,
+      "description": "모든 물류 창고에서 가장 많이 사용한 배송방식"
+    },
+    "답안04": {
+      "type": "exact_number",
+      "expected": 0,
+      "description": "고객 평점이 낮을수록 높은 할인율을 제공받는 경향 (1: 그렇다, 0: 아니다)"
+    },
+    "답안05": {
+      "type": "exact_number",
+      "expected": 143,
+      "description": "Prior_purchases >= 5 이고 Product_importance == 'high'인 샘플 개수"
+    },
+    "답안06": {
+      "type": "exact_number",
+      "expected": 7,
+      "description": "X의 수치형 변수 개수"
+    },
+    "답안07": {
+      "type": "exact_number",
+      "expected": 0,
+      "description": "결측치 처리 전 전체 결측치 개수"
+    },
+    "답안08_1": {
+      "type": "exact_string",
+      "expected": "drop",
+      "case_sensitive": true,
+      "description": "불필요한 변수 삭제 함수명"
+    },
+    "답안08_2": {
+      "type": "exact_number",
+      "expected": 9,
+      "description": "X_del의 컬럼 개수"
+    },
+    "답안09": {
+      "type": "exact_number",
+      "expected": 17,
+      "description": "원핫인코딩 후 X_preset의 컬럼 수"
+    },
+    "답안10": {
+      "type": "exact_number",
+      "expected": -0.049,
+      "tolerance": 0.001,
+      "description": "스케일링 후 X_train의 Cost_of_the_Product 평균값"
+    },
+    "답안12": {
+      "type": "exact_string",
+      "expected": "randomforest",
+      "case_sensitive": false,
+      "description": "ROCAUC 성능이 더 좋은 모델 이름"
+    },
+    "답안13_1": {
+      "type": "auto",
+      "requirements": {
+        "min_dense_layers": 2,
+        "min_dropout_layers": 2,
+        "dropout_rate": 0.3,
+        "hidden_activation": "relu",
+        "output_activation": "sigmoid"
+      },
+      "description": "딥러닝 모델 구조 (Dense 2개 이상, Dropout 2개 이상, relu, sigmoid)"
+    },
+    "답안13_2": {
+      "type": "auto",
+      "requirements": {
+        "max_epochs": 30,
+        "patience": 3,
+        "monitor": "val_accuracy",
+        "monitor_mode": "max"
+      },
+      "description": "딥러닝 학습 history (EarlyStopping patience=3 검증)"
+    },
+    "답안14_1": {
+      "type": "number_range",
+      "min": 0.6,
+      "description": "검증세트에 대한 accuracy (60% 이상이면 정답)"
+    },
+    "답안14_2": {
+      "type": "figure_check",
+      "requirements": {
+        "num_axes": 2,
+        "lines_per_ax": 2,
+        "titles": ["Loss by epoch", "Accuracy by epoch"],
+        "xlabels": ["epochs", "epochs"],
+        "ylabels": ["loss", "accuracy"]
+      },
+      "description": "학습 과정 시각화 figure"
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "title": "AICE Associate - Obesity Level 다중 분류 문제",
+  "description": "식습관과 신체 조건 데이터를 이용한 비만 수준(7단계) 예측",
+  "answers": {
+    "답안01_1": {
+      "type": "exact_number",
+      "expected": 0.79,
+      "tolerance": 0.01,
+      "description": "family_history_with_overweight='yes'인 샘플 비율"
+    },
+    "답안01_2": {
+      "type": "exact_number",
+      "expected": 1801,
+      "description": "FAVC='yes'인 샘플 개수"
+    },
+    "답안02": {
+      "type": "exact_number",
+      "expected": 240,
+      "description": "가족력 있으면서 주 2회 이상 운동하는 사람 수"
+    },
+    "답안03": {
+      "type": "exact_string",
+      "expected": "Obesity_Type_III",
+      "case_sensitive": true,
+      "description": "BMI 중앙값이 가장 높은 비만 수준 클래스"
+    },
+    "답안04": {
+      "type": "exact_string",
+      "expected": "BMI",
+      "case_sensitive": true,
+      "description": "Weight와 가장 높은 양의 상관관계를 가진 변수명"
+    },
+    "답안05": {
+      "type": "exact_string",
+      "expected": "Bike",
+      "case_sensitive": true,
+      "description": "FAF 평균값이 가장 높은 교통수단"
+    },
+    "답안06": {
+      "type": "exact_number",
+      "expected": 1672,
+      "description": "X_train의 샘플 개수"
+    },
+    "답안07": {
+      "type": "exact_number",
+      "expected": 1198,
+      "description": "결측치 처리 전 X_train의 전체 결측치 개수"
+    },
+    "답안08": {
+      "type": "exact_number",
+      "expected": 27,
+      "description": "인코딩 후 X_train의 컬럼 개수"
+    },
+    "답안09": {
+      "type": "exact_number",
+      "expected": 5019,
+      "description": "인코딩 후 y_train의 총합"
+    },
+    "답안10": {
+      "type": "exact_number",
+      "expected": 0.221,
+      "tolerance": 0.001,
+      "description": "스케일링 후 X_train의 Age 평균값"
+    },
+    "답안12_1": {
+      "type": "auto",
+      "requirements": {
+        "num_classes": 7
+      },
+      "description": "confusion_matrix (7x7 행렬)"
+    },
+    "답안12_2": {
+      "type": "auto",
+      "requirements": {
+        "num_classes": 7
+      },
+      "description": "classification_report 딕셔너리 (7개 클래스)"
+    },
+    "답안13_1": {
+      "type": "auto",
+      "requirements": {
+        "min_dense_layers": 3,
+        "min_dropout_layers": 2,
+        "dropout_rate": 0.3,
+        "hidden_activation": "relu",
+        "output_activation": "softmax"
+      },
+      "description": "딥러닝 모델 구조 (Dense 3개 이상, Dropout 2개 이상, relu, softmax)"
+    },
+    "답안13_2": {
+      "type": "auto",
+      "requirements": {
+        "max_epochs": 50,
+        "patience": 5,
+        "monitor": "val_accuracy",
+        "monitor_mode": "max"
+      },
+      "description": "딥러닝 학습 history (EarlyStopping patience=5 검증)"
+    },
+    "답안14_1": {
+      "type": "number_range",
+      "min": 0.8,
+      "description": "검증세트에 대한 accuracy (80% 이상이면 정답)"
+    },
+    "답안14_2": {
+      "type": "figure_check",
+      "requirements": {
+        "num_axes": 2,
+        "lines_per_ax": 2,
+        "titles": ["Loss by epoch", "Accuracy by epoch"],
+        "xlabels": ["epochs", "epochs"],
+        "ylabels": ["loss", "accuracy"]
+      },
+      "description": "학습 과정 시각화 figure"
+    }
+  }
+}

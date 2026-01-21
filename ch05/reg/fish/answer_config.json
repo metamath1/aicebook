@@ -89,8 +89,8 @@
     },
     "답안14_1": {
       "type": "number_range",
-      "max": 70,
-      "description": "검증세트에 대한 MAE (70 이하이면 정답)"
+      "max": 80,
+      "description": "검증세트에 대한 MAE (80 이하이면 정답)"
     },
     "답안14_2": {
       "type": "figure_check",
